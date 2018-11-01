@@ -1,13 +1,13 @@
 /* Including styles files */
-@import sprite.sass
 @import fonts.sass
 @import grid.sass
+@import '../../libs/animate.css/animate.css'
 @import '../../libs/fancybox/dist/jquery.fancybox.css'
 
 
 /* Global settings */
-$font-size: 16px
-$font-family-1: 'Tahoma', sans-serif
+$font-size: 24px
+$font-family-1: 'MuseoCyrl-500', sans-serif
 $color-1: #000
 
 
@@ -38,8 +38,11 @@ a
 	color: $color-1
 	text-decoration: none
 	border-bottom: 1px solid transparent
-	transition: .3s
+	transition: .7s
+	outline: none !important
 
+u
+	text-decoration: none
 img
 	display: block
 	max-width: 100% !important
@@ -75,18 +78,58 @@ input, textarea, button
 		resize: none
 
 .btn
+	display: block
 	position: relative
-	display: flex
-	align-items: center
-	justify-content: center
-	font-size: $font-size
-	font-family: $font-family-1
 	cursor: pointer
 	text-align: center
-	transition: .3s
+	transition: .7s
+	max-width: 380px
+	margin-left: auto
+	margin-right: auto
+	span
+		display: block
+		font-size: 24px
+	&:hover
+		&::before, &::after
+			opacity: .1
+	&::before, &::after
+		content: ''
+		position: absolute
+		display: block
+		border-radius: 70px
+		background-color: #ffffff
+		background-image: linear-gradient(to top, #ffc000 0%, #ffd800 100%)
+		opacity: 0
+		transition: .7s
+	&::before
+		top: -10px
+		bottom: -10px
+		left: -10px
+		right: -10px
+	&::after
+		top: -20px
+		left: -20px
+		right: -20px
+		bottom: -20px
+	u
+		flex-direction: column
+		display: flex
+		align-items: center
+		justify-content: center
+		font-size: 16px
+		font-family: $font-family-1
+		height: 78px
+		box-shadow: 0 0 30px rgba(255, 207, 0, 0.81), 0 5px 0 #d79300
+		border-radius: 80px
+		border: 1px solid #ffd200
+		background-color: #ffffff
+		background-image: linear-gradient(to top, #ffc000 0%, #ffd800 100%)
+		margin-left: auto
+		margin-right: auto
+		max-width: 380px
 
 .input input, .textarea textarea
-	transition: .3s
+	transition: .7s
 
 input, .btn, .slick-slide, textarea
 	outline: none !important
@@ -108,7 +151,244 @@ input, .btn, .slick-slide, textarea
 
 
 .main-wrap
-	// overflow-x: hidden
+
+
+.slide
+	height: 100%
+	height: 100vh
+	display: flex
+	align-items: center
+	justify-content: center
+	text-align: center
+	background-size: cover
+	background-position: center
+	background-repeat: no-repeat
+	padding-top: 25px
+	padding-bottom: 25px
+
+
+.choise
+	&__title
+		font-size: 56px
+		margin-bottom: 40px
+	&__item
+		display: block
+		margin-left: 20px
+		margin-right: 20px
+		&:hover
+			.choise
+				&__img
+					&::before, &::after
+						opacity: 0.05
+
+				&__name
+					background-color: #ffca00
+					transition: .7s
+					&-text
+						color: #212121
+						&::before, &::after
+							background-color: #212121
+					&-triangles-l
+						&::before
+							border-color: transparent #ffca00 transparent transparent
+						&::after
+							border-color: transparent transparent #ffca00 transparent
+					&-triangles-r
+						&::before
+							border-color: #ffca00 transparent transparent transparent
+						&::after
+							border-color: transparent transparent transparent #ffca00
+
+	&__img
+		position: relative
+		&::before, &::after
+			z-index: 1
+			content: ''
+			display: block
+			position: absolute
+			background-color: #4758a5
+			opacity: 0
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			border-radius: 50%
+			margin-top: -30px
+			transition: .7s
+		&::before
+			width: 440px
+			height: 440px
+		&::after
+			width: 480px
+			height: 480px
+		img
+			position: relative
+			z-index: 2
+
+
+
+	&__name
+		z-index: 3
+		width: 350px
+		height: 72px
+		display: flex
+		align-items: center
+		justify-content: center
+		background-color: #4758a5
+		margin-left: auto
+		margin-right: auto
+		margin-top: -125px
+		position: relative
+		box-shadow: 0 30px 60px rgba(29, 30, 34, 0.15)
+		transition: .7s
+		&-text
+			width: 1000%
+			color: #fff
+			font-size: 30px
+			position: relative
+			transition: .7s
+			&::before, &::after
+				display: block
+				content: ''
+				position: absolute
+				top: 50%
+				width: 6px
+				height: 6px
+				border-radius: 50%
+				background-color: #fff
+				margin-top: -3px
+				transition: .7s
+			&::before
+				left: 28px
+			&::after
+				right: 28px
+		&-triangles-l, &-triangles-r
+			&::before, &::after
+				position: absolute
+				content: ''
+				display: block
+				width: 0
+				height: 0
+				border-style: solid
+				transition: .7s
+		&-triangles-l
+			&::before
+				top: 0
+				left: -21px
+				border-width: 0 21px 36px 0
+				border-color: transparent #4758a5 transparent transparent
+			&::after
+				bottom: 0
+				left: -21px
+				border-width: 0 0 36px 21px
+				border-color: transparent transparent #4758a5 transparent
+		&-triangles-r
+			&::before
+				top: 0
+				right: -21px
+				border-width: 36px 21px 0  0
+				border-color: #4758a5 transparent transparent transparent
+			&::after
+				bottom: 0
+				right: -21px
+				border-width: 36px 0 0  21px
+				border-color: transparent transparent transparent #4758a5
+
+
+.hello
+	color: #fff
+	&__phone
+		margin-bottom: 105px
+		u
+			display: inline-block
+			vertical-align: middle
+		b
+			display: inline-flex
+			flex-direction: column
+			align-items: center
+			justify-content: center
+			width: 44px
+			height: 44px
+			box-shadow: 0 30px 60px rgba(29, 30, 34, 0.15)
+			background-color: #4758a5
+			border-radius: 50%
+			margin-right: 17px
+		a
+			color: #fff
+			position: relative
+			top: -1px
+			font-size: 24px
+
+	&__title
+		font-size: 46px
+		max-width: 870px
+		margin-left: auto
+		margin-right: auto
+		margin-bottom: 45px
+	&__col
+		width: 25%
+
+	&__link
+		display: inline-block
+		&:hover
+			.hello
+				&__icon
+					border: 5px solid rgba(255,255,255,.35)
+					&::before
+						border: 1px solid rgba(255,255,255,.35)
+					img
+						&:nth-of-type(1)
+							opacity: 0
+						&:nth-of-type(2)
+							opacity: 1
+
+
+	&__icon
+		width: 140px
+		height: 140px
+		border: 5px solid rgba(255,255,255,.15)
+		border-radius: 50%
+		position: relative
+		transition: .7s
+		margin-left: auto
+		margin-right: auto
+		margin-bottom: 18px
+		&::before
+			content: ''
+			display: block
+			position: absolute
+			width: 120px
+			height: 120px
+			border: 1px solid rgba(255,255,255,.15)
+			border-radius: 50%
+			top: 5px
+			left: 5px
+			transition: .7s
+		img
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			transition: .7s
+			&:nth-of-type(2)
+				opacity: 0
+
+	&__text
+		color: #fff
+		max-width: 260px
+		margin-left: auto
+		margin-right: auto
+
+	&__desc
+		font-size: 30px
+		line-height: 36px
+		max-width: 645px
+		margin-left: auto
+		margin-right: auto
+		margin-top: 47px
+
+	&__btn
+		u
+			margin-top: 36px
 
 
 

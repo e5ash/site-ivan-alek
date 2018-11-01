@@ -1,35 +1,130 @@
+@media screen and (max-height: 760px)
+		.hello
+			&__phone
+				margin-bottom: 20px
+			&__title
+				margin-bottom: 20px
+@media screen and (max-height: 660px)
+		.hello
+			height: 100%
+@media screen and (max-height: 590px)
+	.choise
+		height: 100%
+		&__title
+			margin-bottom: 0
+
+
 @media screen and (max-width: 1199px)
 	.case
 		width: 950px
-	
+
 	.hidden-lg
 		display: block
-	
+
 	.hidden-md
 		display: none
 
+	.choise
+		&__item
+			width: calc(50% - 40px)
 
-	
+
+
+
 @media screen and (max-width: 992px)
 	.case
 		width: 750px
 
 	.hidden-md
-		display: block		
-	
+		display: block
+
 	.hidden-sm
 		display: none
 
+	.choise
+		height: 100%
+		&__title
+			margin-bottom: 0
 
-	
+		&__item
+			width: auto
+			margin-left: 0
+			margin-right: 0
+			margin-bottom: 30px
+			&:last-of-type
+				margin-bottom: 0
+
+	.hello
+		height: 100%
+		&__phone
+			margin-bottom: 35px
+
+		&__title
+			font-size: 34px
+			line-height: 40px
+			margin-bottom: 30px
+			max-width: 640px
+
+		&__text
+			font-size: 20px
+		&__desc
+			font-size: 20px
+			line-height: 24px
+
+
+
 @media screen and (max-width: 767px)
 	.case
 		width: 100%
 
 	.hidden-sm
 		display: block
-	
+
 	.hidden-xs
 		display: none
-	
 
+	.choise
+		&__title
+			font-size: 30px
+		&__img
+			max-width: 340px
+			margin-left: auto
+			margin-right: auto
+			&::before, &::after
+				display: none
+		&__name
+			width: 240px
+			height: 50px
+			margin-top: -95px
+			box-shadow: none
+			&-text
+				font-size: 20px
+		&__item
+			margin-bottom: 15px
+			margin-left: -15px
+			margin-right: -15px
+			&:last-of-type
+				margin-bottom: 0
+
+	.hello
+		&__phone
+			a
+				font-size: 22px
+
+		&__title
+			font-size: 30px
+			line-height: 34px
+
+		&__col
+			width: 50%
+			margin-bottom: 35px
+		&__desc
+			margin-top: 0
+		&__btn
+			&::before, &::after
+				display: none
+
+@media screen and (max-width: 360px)
+	.hello
+		&__col
+			width: 100%

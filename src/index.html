@@ -2,8 +2,9 @@
 <html lang="ru">
 <head>
 	<meta charset="UTF-8">
-	<title>Title</title>
+	<title>Какое мероприятие Вас интересует?</title>
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<!--[if lt IE 9]>
 	<script>
 		document.createElement('header');
@@ -18,44 +19,33 @@
 </head>
 <body>
 <div class="main-wrap">
-	<!-- `` -->
-	<div class="breadcrumbs">
-		<ul itemtype="http://schema.org/BreadcrumbList">
-			<li itemscope="" itemprop="itemListElement" itemtype="http://schema.org/ListItem">
-				<a href="" itemprop="item" title="Главная">
-					<span itemprop="name">На Главную</span>
-					<meta itemprop="position" content="1">
+	<div class="choise slide">
+		<div class="case">
+			<div class="choise__title animated wow fadeInUp" data-wow-delay="0.3s">Какое мероприятие Вас интересует?</div>
+			<div class="choise__list row mid">
+				<a href="adults.html" class="choise__item animated wow fadeInUp" data-wow-delay="0.5s">
+					<div class="choise__img"><img src="upload/choice/1.png" alt=""></div>
+					<div class="choise__name">
+						<div class="choise__name-triangles-l"></div>
+						<div class="choise__name-text">Взрослое</div>
+						<div class="choise__name-triangles-r"></div>
+					</div>
 				</a>
-			</li>
-			<li itemscope="" itemprop="itemListElement" itemtype="http://schema.org/ListItem">
-				<a href="" itemprop="item" title="Главная">
-					<span itemprop="name">На Главную</span>
-					<meta itemprop="position" content="1">
+				<a href="children.html" class="choise__item animated wow fadeInUp" data-wow-delay="0.5s">
+					<div class="choise__img"><img src="upload/choice/2.png" alt=""></div>
+					<div class="choise__name">
+						<div class="choise__name-triangles-l"></div>
+						<div class="choise__name-text">Детское</div>
+						<div class="choise__name-triangles-r"></div>
+					</div>
 				</a>
-			</li>
-		</ul>
+			</div>
+		</div>
 	</div>
-	<header class="header">
-
-	</header>
-
-
-	<main class="main">
-
-	</main>
-
-	<!-- `Подвал` -->
-	<footer class="footer">
-
-	</footer>
-	<!-- Конец `Подвал` -->
 </div>
 
-<!-- Include styles -->
 <link rel="stylesheet" href="template/styles/css/style.css" />
 <link rel="stylesheet" href="template/styles/css/responsive.css" />
-
-<!-- Include scripts -->
 <script src="template/scripts/libs.js"></script>
 <script src="template/scripts/common.js"></script>
 </body>
